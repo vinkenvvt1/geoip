@@ -16,7 +16,7 @@
 
 <?php
   require "convertip.php";
-  if ($_GET["ip"]) {$get_ip = $_GET["ip"];} else {$get_ip = $_SERVER["REMOTE_ADDR"];}
+  if (isset($_GET["ip"])) {$get_ip = $_GET["ip"];} else {$get_ip = $_SERVER["REMOTE_ADDR"];}
   echo $get_ip."<br>";
   echo iconv("GB2312", "UTF-8", convertip($get_ip));
 ?>
